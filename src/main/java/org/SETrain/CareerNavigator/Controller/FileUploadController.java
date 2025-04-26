@@ -18,8 +18,6 @@ public class FileUploadController {
         String fileName= UUID.randomUUID().toString()+originalFilename.substring(originalFilename.lastIndexOf("."));
        String url=  AliOssUtil.uploadFile(fileName,file.getInputStream());
         return Result.success(url);
-
-
     }
 
 
