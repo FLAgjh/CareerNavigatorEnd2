@@ -7,9 +7,18 @@ spring:
     mvc:
         pathmatch:
             matching-strategy: ant_path_matcher
+        static-path-pattern:   /static/**
     fox:
         swagger:
             enabled: true
+    ai:
+        openai:
+
+            base-url: https://api.deepseek.com/
+            api-key: sk-b6278be2badc4f2b83518c6dd71c402b
+            chat:
+                options:
+                    model: deepseek-chat
 
 
 mybatis:
