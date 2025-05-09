@@ -25,7 +25,6 @@ public class WebConfig implements WebMvcConfigurer {
                               "/*.html",
                               "/*.css",
                               "/*.js",
-                              "/static/**",
-                            "/chat/stream/**");
+                              "/static/**");
      }
 }

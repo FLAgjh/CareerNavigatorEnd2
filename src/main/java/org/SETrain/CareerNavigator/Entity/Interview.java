@@ -11,16 +11,26 @@ public class Interview {
     private Integer intensity; // 面试强度
     private String jobdescription; // 岗位描述
     private String resume; // 简历URL
-    private String resumecontent;
-
+    private String interviewtime; // 面试时间
+    private Integer score; // 面试评分
+    private String analysis; // 面试分析
+    private String review; // 面试回顾
+    private String advice; // 面试建议
     private String starttime;
     private String endtime;
-    private Integer totalscore;
-    private Integer prescore;
-    private Integer logicscore;
-    private Integer changescore;
-    private String skillssummary;
-    private String advice;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Interview interview = (Interview) o;
+        return Objects.equals(id, interview.id) && Objects.equals(username, interview.username) && Objects.equals(jobname, interview.jobname) && Objects.equals(jobtype, interview.jobtype) && Objects.equals(interviewtype, interview.interviewtype) && Objects.equals(intensity, interview.intensity) && Objects.equals(jobdescription, interview.jobdescription) && Objects.equals(resume, interview.resume) && Objects.equals(interviewtime, interview.interviewtime) && Objects.equals(score, interview.score) && Objects.equals(analysis, interview.analysis) && Objects.equals(review, interview.review) && Objects.equals(advice, interview.advice) && Objects.equals(starttime, interview.starttime) && Objects.equals(endtime, interview.endtime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, jobname, jobtype, interviewtype, intensity, jobdescription, resume, interviewtime, score, analysis, review, advice, starttime, endtime);
+    }
 
     @Override
     public String toString() {
@@ -33,29 +43,30 @@ public class Interview {
                 ", intensity=" + intensity +
                 ", jobdescription='" + jobdescription + '\'' +
                 ", resume='" + resume + '\'' +
-                ", resumecontent='" + resumecontent + '\'' +
+                ", interviewtime='" + interviewtime + '\'' +
+                ", score=" + score +
+                ", analysis='" + analysis + '\'' +
+                ", review='" + review + '\'' +
+                ", advice='" + advice + '\'' +
                 ", starttime='" + starttime + '\'' +
                 ", endtime='" + endtime + '\'' +
-                ", totalscore=" + totalscore +
-                ", prescore=" + prescore +
-                ", logicscore=" + logicscore +
-                ", changescore=" + changescore +
-                ", skillssummary='" + skillssummary + '\'' +
-                ", advice='" + advice + '\'' +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Interview interview = (Interview) o;
-        return Objects.equals(id, interview.id) && Objects.equals(username, interview.username) && Objects.equals(jobname, interview.jobname) && Objects.equals(jobtype, interview.jobtype) && Objects.equals(interviewtype, interview.interviewtype) && Objects.equals(intensity, interview.intensity) && Objects.equals(jobdescription, interview.jobdescription) && Objects.equals(resume, interview.resume) && Objects.equals(resumecontent, interview.resumecontent) && Objects.equals(starttime, interview.starttime) && Objects.equals(endtime, interview.endtime) && Objects.equals(totalscore, interview.totalscore) && Objects.equals(prescore, interview.prescore) && Objects.equals(logicscore, interview.logicscore) && Objects.equals(changescore, interview.changescore) && Objects.equals(skillssummary, interview.skillssummary) && Objects.equals(advice, interview.advice);
+    public String getStarttime() {
+        return starttime;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, username, jobname, jobtype, interviewtype, intensity, jobdescription, resume, resumecontent, starttime, endtime, totalscore, prescore, logicscore, changescore, skillssummary, advice);
+    public void setStarttime(String starttime) {
+        this.starttime = starttime;
+    }
+
+    public String getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(String endtime) {
+        this.endtime = endtime;
     }
 
     public Integer getId() {
@@ -122,68 +133,36 @@ public class Interview {
         this.resume = resume;
     }
 
-    public String getResumecontent() {
-        return resumecontent;
+    public String getInterviewtime() {
+        return interviewtime;
     }
 
-    public void setResumecontent(String resumecontent) {
-        this.resumecontent = resumecontent;
+    public void setInterviewtime(String interviewtime) {
+        this.interviewtime = interviewtime;
     }
 
-    public String getStarttime() {
-        return starttime;
+    public Integer getScore() {
+        return score;
     }
 
-    public void setStarttime(String starttime) {
-        this.starttime = starttime;
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
-    public String getEndtime() {
-        return endtime;
+    public String getAnalysis() {
+        return analysis;
     }
 
-    public void setEndtime(String endtime) {
-        this.endtime = endtime;
+    public void setAnalysis(String analysis) {
+        this.analysis = analysis;
     }
 
-    public Integer getTotalscore() {
-        return totalscore;
+    public String getReview() {
+        return review;
     }
 
-    public void setTotalscore(Integer totalscore) {
-        this.totalscore = totalscore;
-    }
-
-    public Integer getPrescore() {
-        return prescore;
-    }
-
-    public void setPrescore(Integer prescore) {
-        this.prescore = prescore;
-    }
-
-    public Integer getLogicscore() {
-        return logicscore;
-    }
-
-    public void setLogicscore(Integer logicscore) {
-        this.logicscore = logicscore;
-    }
-
-    public Integer getChangescore() {
-        return changescore;
-    }
-
-    public void setChangescore(Integer changescore) {
-        this.changescore = changescore;
-    }
-
-    public String getSkillssummary() {
-        return skillssummary;
-    }
-
-    public void setSkillssummary(String skillssummary) {
-        this.skillssummary = skillssummary;
+    public void setReview(String review) {
+        this.review = review;
     }
 
     public String getAdvice() {

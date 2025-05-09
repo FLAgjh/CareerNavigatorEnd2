@@ -53,7 +53,7 @@ public class Comment {
         this.username = username;
     }
 
-    public Integer getJobid() {
+    public Integer getJobId() {
         return jobid;
     }
 

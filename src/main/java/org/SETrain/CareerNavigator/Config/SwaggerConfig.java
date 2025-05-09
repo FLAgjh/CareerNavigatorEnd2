@@ -14,7 +14,7 @@ public class SwaggerConfig {
                 return new OpenAPI()
                                 .info(new Info()
                                                 .title("职业导航系统API文档")
-                                                .description("包含用户管理、账户管理、用户画像等功能")
+                                                .description("包含用户管理、账户管理、用户画像、岗位信息等功能")  // 修改描述
                                                 .version("3.0.0")
                                                 .contact(new Contact()
                                                                 .name("CareerNavigator Team")
